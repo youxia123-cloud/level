@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./level6.css">
+</head>
+
+<body>
+    <div class="nav">
+        <ul>
+            <li><a href="./level6.html">主页</a></li>
+            <li>
+                <a href="./level6.2.html">美文欣赏</a> </li>
+            <li>
+                <a href="./level6.1.html">图片展示</a>
+            </li>
+            <li>
+                <a href="./level6.html">留言板</a>
+            </li>
+            <li> <a href="./level6.html">日志</a> </li>
+        </ul>
+    </div>
+    <div class="clock">
+        <p>Time</p>
+        <svg>
+            <text id="time" text-anchor="middle" x="50%" y="50%" class="words words-1"></text>
+            <text id="time" text-anchor="middle" x="50%" y="50%" class="words words-2"></text>
+            <text id="time" text-anchor="middle" x="50%" y="50%" class="words words-3"></text>
+            <text id="time" text-anchor="middle" x="50%" y="50%" class="words words-4"></text>
+        </svg>
+        <div class="search">
+            <p>Search</p>
+            <input type="text" placeholder="请输入" class="text">
+            <input type="submit" class="submit" value="搜索">
+        </div>
+        <div class="picture">
+
+        </div>
+    </div>
+    <div class="box">
+        <p>古之成大事者，不惟有超世之才，亦必有坚韧不拔之志。————苏轼</p>
+
+    </div>
+    <script>
+        function showTime() {
+            let nowtime = new Date();
+            let h = nowtime.getHours();
+            let m = nowtime.getMinutes();
+            let s = nowtime.getSeconds();
+
+            h = checkTime(h);
+            m = checkTime(m);
+            s = checkTime(s);
+            return h + ":" + m + ":" + s;
+
+
+        }
+
+
+        function checkTime(x) {
+            if (x < 10) {
+                x = "0" + x;
+            };
+            return x;
+        }
+        let divlist = document.querySelectorAll('text');
+        setInterval(() => {
+            timestr = showTime();
+            divlist.forEach((item, i) => {
+                item.innerHTML = timestr;
+            })
+        }, 1000)
+    </script>
+</body>
+
+</html>

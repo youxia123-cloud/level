@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #B9EFFD;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav {
+    width: 100%;
+    height: 100px;
+    background-color: lightcyan;
+}
+
+.nav>ul>li {
+    width: 200px;
+    height: 50px;
+    list-style: none;
+    float: left;
+    margin-right: 100px;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    font-size: 30px;
+    color: lightsalmon;
+}
+
+.nav>ul>li>a {
+    color: lightsalmon;
+}
+
+.nav>ul>li>a:hover {
+    color: lightseagreen;
+}
+
+.image {
+    width: 400px;
+    height: 300px;
+    border: lightskyblue solid 1px;
+}
+
+.image>img {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* 时钟的样式设置 */
+
+.clock {
+    background-color: #B9EFFD;
+    width: 100%;
+    height: 360px;
+}
+
+.clock>p {
+    color: transparent;
+    font-size: 70px;
+    margin-left: 200px;
+    margin-bottom: 10px;
+    -webkit-text-stroke: 1px #657BD6;
+    -ms-text-stroke: 1px #657BD6;
+}
+
+svg {
+    width: 40%;
+    height: 100%;
+}
+
+.words {
+    font-size: 17vh;
+    font-weight: bold;
+    /* 无填充*/
+    fill: none;
+    stroke-width: 8px;
+    /*虚线与实线加起来刚好是400*/
+    stroke-dasharray: 90, 310;
+    animation: drawing 8s linear infinite;
+}
+
+.words-1 {
+    stroke: deepskyblue;
+    /*发光的效果  */
+    /* text-shadow: 1 0 50px deepskyblue; */
+    animation-delay: -2s;
+}
+
+.words-2 {
+    stroke: lightseagreen;
+    /*发光的效果  */
+    /* text-shadow: 0 0 50px lightseagreen; */
+    animation-delay: -4s;
+}
+
+.words-3 {
+    stroke: orange;
+    /*发光的效果  */
+    /* text-shadow: 0 0 50px orange; */
+    animation-delay: -6s;
+}
+
+.words-4 {
+    stroke: pink;
+    /*发光的效果  */
+    /* text-shadow: 0 0 50px pink; */
+    animation-delay: -8s;
+}
+
+@keyframes drawing {
+    to {
+        /*虚线与实线交替*/
+        stroke-dashoffset: -400;
+    }
+}
+
+.search {
+    width: 400px;
+    height: 330px;
+    position: relative;
+    top: -460px;
+    left: 1050px;
+}
+
+.search>p {
+    /* 透明 */
+    color: transparent;
+    font-size: 70px;
+    margin: 0 22%;
+    /* 浏览器的私有前缀 ，实现字体描边*/
+    -webkit-text-stroke: 1px #657BD6;
+    -ms-text-stroke: 1px #657BD6;
+}
+
+.search>.text {
+    width: 270px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    right: 10%;
+    border: 2px solid lightskyblue;
+    border-radius: 15px;
+    outline: none;
+}
+
+.search>.submit {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    margin-top: 3px;
+    margin-left: -4px;
+    position: absolute;
+    top: 50%;
+    left: 80%;
+}
+
+.picture {
+    width: 200px;
+    height: 200px;
+    background-image: url(./fruit.png);
+    position: absolute;
+    top: 150px;
+    left: 700px;
+    border-radius: 100px solid turquoise;
+}
+
+.box {
+    width: 100%;
+    height: 70px;
+    font-size: 30px;
+    color: black;
+    font-family: "宋体";
+    margin-top: 200px;
+    text-align: center;
+}

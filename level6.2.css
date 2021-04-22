@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: seashell;
+}
+
+.content {
+    width: 100%;
+    height: 100%;
+}
+
+.content>p {
+    width: 660px;
+    height: 800px;
+    font-size: 30px;
+    margin-left: 70px;
+    margin-bottom: 50px;
+    line-height: 70px;
+    text-align: center;
+    border: mediumaquamarine 3px solid;
+    border-radius: 20px;
+    float: left;
+    color: lightskyblue;
+    font-family: '宋体';
+}
+
+.content>h1 {
+    font-size: 45px;
+    /* 透明 */
+    color: transparent;
+    /* 浏览器的私有前缀 ，实现字体描边*/
+    -webkit-text-stroke: 1px lightsalmon;
+    -ms-text-stroke: 1px lightsalmon;
+    clear: both;
+    border-bottom: 3px solid lightskyblue;
+    font-family: '宋体';
+    background-color: beige;
+}
