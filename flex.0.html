@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex布局练习</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(top, #222, #333);
+        }
+        
+        [class$="dice"] {
+            margin: 16px;
+            padding: 4px;
+            background-color: #e7e7e7;
+            width: 104px;
+            height: 104px;
+            object-fit: contain;
+            box-shadow: inset 0 5px white, inset 0 -5px #bbb, inset 5px 0 #d7d7d7, inset -5px 0 #d7d7d7;
+            border-radius: 10%;
+        }
+        
+        .count {
+            display: block;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            margin: 4px;
+            background-color: #333;
+            box-shadow: inset 0 3px #111, inset 0 -3px #555;
+        }
+        
+        .first1-dice {
+            /* 默认首行左对齐 */
+            display: flex;
+        }
+        
+        .first2-dice {
+            /* 实现居中对齐 */
+            display: flex;
+            /* 容器的属性：定义了项目在主轴上的对齐方式————居中 */
+            justify-content: center;
+        }
+        
+        .first3-dice {
+            /* 实现右对齐 */
+            display: flex;
+            justify-content: flex-end;
+            /* 容器的属性：定义了项目在主轴上的对齐方式————右对齐 */
+        }
+        
+        .first4-dice {
+            /*实现垂直方向居中（通过垂直移动主轴）*/
+            display: flex;
+            align-items: center;
+            /* 容器的属性：定义项目在交叉轴上的对齐方式————居中 */
+        }
+        
+        .first5-dice {
+            /* 实现一个点在正中间 */
+            display: flex;
+            justify-content: center;
+            /* 容器的属性：定义项目在主轴上的对齐方式————居中 */
+            align-items: center;
+            /* 容器的属性：定义项目在垂直轴上的对齐方式————居中 */
+        }
+        
+        .first6-dice {
+            /* 实现一个点在水平方向的居中，竖直方向最下面 */
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            /* 容器的属性：定义项目在垂直轴上的对齐方式————与交叉轴的终点对齐 */
+        }
+        
+        .first7-dice {
+            /* 实现一个点在水平方向右对齐，竖直方向最下面 */
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+        
+        .second1-dice {
+            /* 实现两个点水平两端对齐 */
+            display: flex;
+            justify-content: space-between;
+            /* 容器属性：项目在上主轴两端对齐，项目之间的间隔都相等*/
+        }
+        
+        .second2-dice {
+            /* 实现两个点竖直方向两端对齐 */
+            display: flex;
+            flex-direction: column;
+            /*  容器属性：决定主轴的方向（项目的排列方向）————主轴为垂直方向，起点在上沿。*/
+            justify-content: space-between;
+        }
+        
+        .second3-dice {
+            /* 实现两个点水平方向居中，竖直方向两端对齐 */
+            display: flex;
+            flex-direction: column;
+            /*  容器属性：决定主轴的方向（项目的排列方向）————主轴为垂直方向，起点在上沿。*/
+            justify-content: space-between;
+            /* 容器属性：项目在上主轴两端对齐，项目之间的间隔都相等*/
+            align-items: center;
+        }
+        
+        .second4-dice {
+            /* 实现两个点水平方向右对齐，竖直方向两端对齐 */
+            display: flex;
+            flex-direction: column;
+            /*  容器属性：决定主轴的方向（项目的排列方向）————主轴为垂直方向，起点在上沿。*/
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        
+        .second5-dice {
+            /* 实现两个点在对角线位置(紧挨在一起) */
+            display: flex;
+        }
+        
+        .second5-dice>.count:nth-child(2) {
+            /* 实现两个点在对角线位置（紧挨在一起） */
+            align-self: center;
+            /* 项目属性：允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性，这里设置为居中*/
+        }
+        
+        .second6-dice {
+            /* 实现两个点在对角线的位置，不紧挨 */
+            display: flex;
+            justify-content: space-between;
+            /* 容器属性：项目在上主轴两端对齐，项目之间的间隔都相等*/
+        }
+        
+        .second6-dice>.count:nth-child(2) {
+            /* 实现两个点在对角线的位置，不紧挨 */
+            align-self: flex-end;
+        }
+        
+        .third-dice {
+            /* 实现三个点在对角线的位置 */
+            display: flex;
+        }
+        
+        .third-dice>.count:nth-child(2) {
+            /* 实现三个点在对角线的位置 */
+            align-self: center;
+        }
+        
+        .third-dice>.count:nth-child(3) {
+            /* 实现三个点在对角线的位置 */
+            align-self: flex-end;
+        }
+        
+        .fourth1-dice>.colunm1 {
+            /* 实现四个点呈对折形状分布 */
+            display: flex;
+            justify-content: flex-start;
+        }
+        
+        .fourth1-dice>.colunm2 {
+            /* 实现四个点呈对折形状分布 */
+            display: flex;
+            justify-content: flex-start;
+            align-self: flex-end;
+            margin-top: 40px;
+        }
+        
+        .fourth2-dice {
+            display: flex;
+            justify-content: space-between;
+            align-content: space-between;
+        }
+        
+        .fourth2-dice>.colunm1>.count:nth-child(2) {
+            margin-top: 47px;
+        }
+        
+        .fourth2-dice>.colunm2>.count:nth-child(2) {
+            margin-top: 47px;
+        }
+        
+        .fourth3-dice {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .fourth3-dice .colunm {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .fifth-dice {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .fifth-dice>.colunm1>.count:nth-child(2) {
+            margin-top: 47px;
+        }
+        
+        .fifth-dice>.colunm3>.count:nth-child(2) {
+            margin-top: 47px;
+        }
+        
+        .fifth-dice>.colunm2>.count {
+            margin-top: 40px;
+        }
+        
+        .sixth-dice {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .sixth-dice>.colunm {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 一个点 -->
+    <div class="first1-dice">
+        <span class="count"></span>
+    </div>
+    <div class="first2-dice">
+        <span class="count"></span>
+    </div>
+    <div class="first3-dice">
+        <span class="count"></span>
+    </div>
+    <div class="first4-dice">
+        <span class="count"></span>
+    </div>
+    <div class="first1-dice">
+        <span class="count"></span>
+    </div>
+    <div class="first5-dice">
+        <span class="count"></span>
+    </div>
+    <div class="first6-dice">
+        <span class="count"></span>
+    </div>
+    <div class="first7-dice">
+        <span class="count"></span>
+    </div>
+    <!-- 两个点 -->
+    <div class="second1-dice">
+        <span class="count"></span>
+        <span class="count"></span>
+    </div>
+    <div class="second2-dice">
+        <span class="count"></span>
+        <span class="count"></span>
+    </div>
+    <div class="second3-dice">
+        <span class="count"></span>
+        <span class="count"></span>
+    </div>
+    <div class="second4-dice">
+        <span class="count"></span>
+        <span class="count"></span>
+    </div>
+    <div class="second5-dice">
+        <span class="count"></span>
+        <span class="count"></span>
+    </div>
+    <div class="second6-dice">
+        <span class="count"></span>
+        <span class="count"></span>
+    </div>
+    <!-- 三个点 -->
+    <div class="third-dice">
+        <span class="count"></span>
+        <span class="count"></span>
+        <span class="count"></span>
+    </div>
+    <!-- 四个点 -->
+    <div class="fourth1-dice">
+        <div class="colunm1">
+            <span class="count"></span>
+            <span class="count"></span>
+            <span class="count"></span>
+        </div>
+        <div class="colunm2">
+            <span class="count"></span>
+        </div>
+    </div>
+    <div class="fourth2-dice">
+        <div class="colunm1">
+            <span class="count"></span>
+            <span class="count"></span>
+        </div>
+        <div class="colunm2">
+            <span class="count"></span>
+            <span class="count"></span>
+        </div>
+    </div>
+    <div class="fourth3-dice">
+        <div class="colunm1">
+            <span class="count"></span>
+            <span class="count"></span>
+            <span class="count"></span>
+        </div>
+        <div class="colunm2">
+            <span class="count"></span>
+        </div>
+    </div>
+    <!-- 五个点 -->
+    <div class="fifth-dice">
+        <div class="colunm1">
+            <span class="count"></span>
+            <span class="count"></span>
+        </div>
+        <div class="colunm2">
+            <span class="count"></span>
+        </div>
+        <div class="colunm3">
+            <span class="count"></span>
+            <span class="count"></span>
+        </div>
+    </div>
+    <!-- 六个点 -->
+    <div class="sixth-dice">
+        <div class="colunm">
+            <span class="count"></span>
+            <span class="count"></span>
+            <span class="count"></span>
+        </div>
+        <div class="colunm">
+            <span class="count"></span>
+            <span class="count"></span>
+            <span class="count"></span>
+        </div>
+    </div>
+</body>
+
+</html>
