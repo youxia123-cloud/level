@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    /* 去除链接的下划线 */
+}
+
+img {
+    border: none;
+}
+
+body {
+    background: url(../images/background.jpg) repeat-x #ffffff;
+}
+
+#top {
+    width: 1620px;
+    height: 30px;
+    margin: 0 auto;
+}
+
+.top_menu {
+    float: left;
+    margin-top: 5px;
+    margin-left: 50px;
+}
+
+.top_menu li {
+    float: left;
+    font-size: 30px;
+    line-height: 30px;
+    padding-right: 40px;
+    margin-right: 20px;
+}
+
+.top_menu a {
+    color: #c0c0c0;
+}
+
+.top_menu a:hover {
+    color: #ffffff;
+}
+
+.top_menu .no_dot {
+    background: none;
+}
+
+.top_bar {
+    float: right;
+    width: 600px;
+    height: 70px;
+    margin-top: 0px;
+}
+
+.top_bar li {
+    float: left;
+    width: 150px;
+    height: 50px;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 30px;
+    padding-left: 30px;
+    text-align: center;
+    margin-left: -5px;
+    padding-right: 30px;
+}
+
+.top_bar .phone {
+    background: url(../images/phone.png) no-repeat -1px -10px;
+}
+
+.top_bar .help {
+    background: url(../images/information.png) no-repeat 2px -10px;
+}
+
+.top_bar .help a {
+    color: #ffffff;
+}
+
+.top_bar .flag {
+    width: 70px;
+    height: 70px;
+    float: left;
+    margin-left: 340px;
+    margin-top: -54px;
+}
+
+#header {
+    width: 300px;
+    height: 100px;
+    clear: both;
+}
+
+#header img {
+    width: 90px;
+    height: 90px;
+    margin-left: 50px;
+}
